@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        /* height: 100vh; */
+        background:url("{{ url_for('static', filename='images/img-04.jpg') }}");
+        
+    }
+
+    .container {
+        background-color: rgb(255, 255, 255, 0.5);
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        width: 400px;
+        text-align: center;
+        margin-top: 60px;
+        /* opacity: 0.5; */
+    }
+
+    h2 {
+        margin-bottom: 30px;
+        color: #333333;
+    }
+
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        outline: none;
+    }
+
+    input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #007bff;
+    }
+
+    .form-group {
+        text-align: left;
+    }
+    div.container{
+        width:500px;
+    }
+</style>
+
+<!-- Site Icons -->
+<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon" />
+<link rel="apple-touch-icon" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<!-- Site CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<!-- ALL VERSION CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/versions.css') }}">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+
+<!-- Modernizer for Portfolio -->
+<script src="{{ url_for('static', filename='js/modernizer.js') }}"></script>
+
+</head>
+<body>
+
+    <div class="container">
+        <h2>Login</h2>
+        <form action="/admin_login" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="uname" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="upassword" placeholder="Enter your password" required>
+            </div>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+        <!-- ALL JS FILES -->
+        <script src="js/all.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCKjLTXdq6Db3Xit_pW_GK4EXuPRtnod4o"></script>
+        <!-- Mapsed JavaScript -->
+        <script src="js/mapsed.js"></script>
+        <script src="js/01-custom-places-example.js"></script>
+        <!-- ALL PLUGINS -->
+        <script src="js/custom.js"></script>
+    
+</body>
+</html>

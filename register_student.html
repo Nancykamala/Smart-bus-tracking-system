@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Index Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background:url("{{ url_for('static', filename='images/adin.jpg') }}");
+        }
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto; /* Adjusted margin */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .add-student-button {
+            display: block;
+            width: 150px;
+            margin: 20px auto; /* Center align */
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .add-student-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    
+<!-- Site Icons -->
+<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon" />
+<link rel="apple-touch-icon" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<!-- Site CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<!-- ALL VERSION CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/versions.css') }}">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+
+<!-- Modernizer for Portfolio -->
+<script src="{{ url_for('static', filename='js/modernizer.js') }}"></script>
+
+</head>
+<body>
+    
+    <header class="top-navbar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbars-host">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('student_login') }}">Student</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('admin_login') }}">Admin</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Back</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Registered Student Details</h2>
+        <table>
+            <tr>
+                <th>ID</th> 
+                <th>Name</th> 
+                <th>Rollno</th> 
+                <!-- <th>Image</th> -->
+            </tr>
+            {% for value in result %}
+            <tr>
+                <td>{{ value.id }}</td>
+                <td>{{ value.name }}</td>
+                <td>{{ value.roll_number }}</td>
+                <!-- <td><img src="{{ value.image }}" alt="Student Image"></td> -->
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+            <!-- ALL JS FILES -->
+            <script src="js/all.js"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCKjLTXdq6Db3Xit_pW_GK4EXuPRtnod4o"></script>
+            <!-- Mapsed JavaScript -->
+            <script src="js/mapsed.js"></script>
+            <script src="js/01-custom-places-example.js"></script>
+            <!-- ALL PLUGINS -->
+            <script src="js/custom.js"></script>
+</body>
+</html>
